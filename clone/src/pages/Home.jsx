@@ -1,13 +1,20 @@
+import CircleNav from '../components/design/CircleNav';
+import InsightCard from '../components/design/InsightCard';
+import NavCard from '../components/design/NavCard';
+
 export default function Home() {
   return (
     <div className="flex flex-col w-screen h-full">
-      <div className="flex w-full h-[650px] px-24 py-16 gap-6">
-        <div className="flex flex-[3] bg-gray-400">슬라이드 배너 자리</div>
+      <div className="flex w-full h-[650px] px-20 py-16 gap-16">
+        <div className="flex flex-col flex-[4] gap-10">
+          <InsightCard />
+          <CircleNav />
+        </div>
 
-        <div className="flex flex-col flex-[1] bg-gray-500">
-          <div>카드1</div>
-          <div>카드2</div>
-          <div>카드3</div>
+        <div className="flex flex-col flex-[1] gap-6">
+          <NavCard />
+          <NavCard />
+          <NavCard />
         </div>
       </div>
 
