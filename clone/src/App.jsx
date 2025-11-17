@@ -7,11 +7,10 @@ import Layout from './components/Layout';
 
 // 페이지들
 import Home from './pages/Home';
-import Insights from './pages/Insights';
-import InsightDetail from './pages/InsightsDetail';
-import QuarterlyTrends from './pages/QuarterlyTrends';
-import Index from './pages/Index';
+import DataLab from './pages/DataLab';
+import Indexes from './pages/Indexes';
 import About from './pages/About';
+import Research from './pages/Research';
 
 function App() {
   return (
@@ -20,11 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          <Route path="/insights" element={<Insights />} />
-          <Route path="/insights/:id" element={<InsightDetail />} />
+          <Route path="/research" element={<Research />} />
 
-          <Route path="/trends" element={<QuarterlyTrends />} />
-          <Route path="/index" element={<Index />} />
+          <Route path="/datalab" element={<DataLab />} />
+          <Route path="/indexes" element={<Indexes />} />
 
           <Route path="/about" element={<About />} />
         </Routes>
