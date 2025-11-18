@@ -3,6 +3,7 @@ import BriefCard from '../components/design/BriefCard';
 import CircleNav from '../components/design/CircleNav';
 import InsightCard from '../components/design/InsightCard';
 import NavCard from '../components/design/NavCard';
+import TrendCard from '../components/design/TrendCard';
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
       </div>
 
       {/* 섹션 2 */}
-      <div className="flex w-full h-[550px] px-20 py-10 gap-16">
+      <div className="flex w-full h-[600px] px-20 py-10 gap-16">
         <div className="flex flex-[4] flex-col gap-10">
           <div className="flex text-3xl font-bold"> Insights / Brief </div>
           <div className="flex flex-row">
@@ -33,7 +34,10 @@ export default function Home() {
           <BarNav />
         </div>
 
-        <div className="flex flex-col flex-[1] gap-6 bg-gray-500"> Quarterly Trends</div>
+        <div className="flex flex-col flex-[1] gap-6">
+          <div className="flex text-3xl font-bold"> Quarterly Trends </div>
+          <TrendCard />
+        </div>
       </div>
 
       <div className="flex w-full flex-col h-[800px] px-24 my-20 py-12 bg-orange-50">
