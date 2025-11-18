@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.svg';
+import logo from '../assets/etc/logo.svg';
 import { useState } from 'react';
-import arrowDown from '../assets/lang_arrow_black.svg';
+import arrowDown from '../assets/etc/lang_arrow_black.svg';
 
 export default function Header() {
   const [lang, setLang] = useState('EN');
