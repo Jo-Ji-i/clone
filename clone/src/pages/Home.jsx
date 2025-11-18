@@ -12,6 +12,9 @@ import MediaList from '../components/design/MediaList';
 import { listData } from '../data/list.js';
 import DataCard from '../components/design/DataCard';
 
+// 버튼
+import { CircleBtn } from '../components/design/Button';
+
 export default function Home() {
   return (
     <div className="flex flex-col w-screen h-full">
@@ -31,24 +34,41 @@ export default function Home() {
 
       {/* 섹션 2 */}
       <div className="flex w-full h-[600px] px-20 py-10 gap-16">
-        <div className="flex flex-[4] flex-col gap-10">
+        <div className="flex flex-[4] flex-col gap-10 h-full relative">
           <div className="flex text-3xl font-bold"> Insights / Brief </div>
-          <div className="flex flex-row">
+          <div className="flex flex-row items-center h-full">
             <BriefCard />
             <BriefCard />
             <BriefCard />
           </div>
           <BarNav />
+          <CircleBtn
+            direction="right"
+            className="absolute right-[-20px] top-1/2 -translate-y-1/2"
+          />
         </div>
 
-        <div className="flex flex-col flex-[1] gap-6">
-          <div className="flex text-3xl font-bold"> Quarterly Trends</div>
-          <TrendCard />
+        <div className="flex flex-col flex-[1]">
+          <div className="relative flex flex-row items-center h-full">
+            <CircleBtn
+              direction="left"
+              className="absolute left-[-30px] top-1/2 -translate-y-1/2"
+            />
+            <div className="flex flex-col h-full gap-6 ">
+              <div className="flex text-3xl font-bold"> Quarterly Trends</div>
+              <TrendCard />
+              <CircleNav simple count={5} />
+            </div>
+            <CircleBtn
+              direction="right"
+              className="absolute right-[-30px] top-1/2 -translate-y-1/2"
+            />
+          </div>
         </div>
       </div>
 
       {/* 섹션 3 */}
-      <div className="flex w-full flex-col h-[800px] px-20 my-20 py-12 gap-5 bg-orange-100">
+      <div className="flex w-full flex-col h-[800px] relative px-20 my-20 py-12 gap-5 bg-orange-100">
         <div className="flex text-3xl font-bold"> Research Report </div>
         <div className="flex flex-row gap-5 mb-5">
           <ResearchCard />
@@ -57,6 +77,8 @@ export default function Home() {
           <ResearchCard />
         </div>
         <BarNav />
+        <CircleBtn direction="left" className="absolute left-[40px] top-1/2 -translate-y-1/2" />
+        <CircleBtn direction="right" className="absolute right-[80px] top-1/2 -translate-y-1/2" />
       </div>
 
       {/* 섹션 4 */}
