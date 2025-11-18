@@ -10,6 +10,7 @@ import MediaList from '../components/design/MediaList';
 
 // 데이터
 import { listData } from '../data/list.js';
+import DataCard from '../components/design/DataCard';
 
 export default function Home() {
   return (
@@ -59,7 +60,7 @@ export default function Home() {
       </div>
 
       {/* 섹션 4 */}
-      <div className="flex w-full h-[550px] px-20 py-1 mb-20 gap-16">
+      <div className="flex w-full h-[550px] px-20 py-1  gap-16">
         <div className="flex flex-[4] flex-col">
           <div className="flex flex-row justify-between px-6 ">
             <div className="flex gap-6 text-3xl font-bold">
@@ -71,7 +72,10 @@ export default function Home() {
           <MediaList items={listData} />
         </div>
 
-        <div className="flex flex-col flex-[1] bg-gray-500"> Data </div>
+        <div className="flex flex-col flex-[1] ">
+          <div className="text-3xl font-bold"> Data</div>
+          <DataCard />
+        </div>
       </div>
     </div>
   );
