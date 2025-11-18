@@ -3,6 +3,7 @@ import BriefCard from '../components/design/BriefCard';
 import CircleNav from '../components/design/CircleNav';
 import InsightCard from '../components/design/InsightCard';
 import NavCard from '../components/design/NavCard';
+import ResearchCard from '../components/design/ResearchCard';
 import TrendCard from '../components/design/TrendCard';
 
 export default function Home() {
@@ -40,13 +41,15 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex w-full flex-col h-[800px] px-24 my-20 py-12 bg-orange-50">
-        <div> Research Report </div>
-        <div className="flex flex-row ">
-          <div> 포스트 1</div>
-          <div> 포스트 2</div>
-          <div> 포스트 3</div>
+      <div className="flex w-full flex-col h-[800px] px-24 my-20 py-12 gap-5 bg-orange-100">
+        <div className="flex text-3xl font-bold"> Research Report </div>
+        <div className="flex flex-row gap-5 mb-5">
+          <ResearchCard />
+          <ResearchCard />
+          <ResearchCard />
+          <ResearchCard />
         </div>
+        <BarNav />
       </div>
 
       <div className="flex w-full h-[550px] px-24 py-1 mb-20 gap-6">
