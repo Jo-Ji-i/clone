@@ -1,34 +1,38 @@
 // 컴포넌트
 import BarNav from '../components/design/BarNav';
 import BriefCard from '../components/design/BriefCard';
-import CircleNav from '../components/design/CircleNav';
-import InsightCard from '../components/design/InsightCard';
 import NavCard from '../components/design/NavCard';
 import ResearchCard from '../components/design/ResearchCard';
 import TrendCard from '../components/design/TrendCard';
 import MediaList from '../components/design/MediaList';
+import CircleNav from '../components/design/CircleNav';
 
 // 데이터
 import { listData } from '../data/list.js';
+import { NavCover } from '../data/cover.js';
+import { InsightCover } from '../data/cover.js';
+
 import DataCard from '../components/design/DataCard';
 
 // 버튼
 import { CircleBtn } from '../components/design/Button';
 
+import InsightCarousel from '../components/feat/InsightCarousel.jsx';
+import StackedCards from '../components/animation/StackedCards';
+
 export default function Home() {
   return (
     <div className="flex flex-col w-screen h-full">
       {/* 섹션 1  */}
-      <div className="flex w-full h-[650px] px-20 py-16 gap-16">
-        <div className="flex flex-col flex-[4] gap-10">
-          <InsightCard />
-          <CircleNav />
+      <div className="flex w-full h-[650px] px-20 py-16 gap-12">
+        <div className="flex flex-col flex-[4] ">
+          <InsightCarousel />
         </div>
 
         <div className="flex flex-col flex-[1] gap-6">
-          <NavCard />
-          <NavCard />
-          <NavCard />
+          {NavCover.map((item, idx) => (
+            <NavCard key={idx} title={item.title} image={item.image} />
+          ))}
         </div>
       </div>
 

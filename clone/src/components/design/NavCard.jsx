@@ -1,17 +1,16 @@
 import React from 'react';
-import bg_chart from '../../assets/etc/bg_chart.svg';
 
-const NavCard = () => {
+const NavCard = ({ title, image }) => {
   return (
-    <div className="relative flex flex-col items-start justify-center w-full gap-3 pl-6 overflow-hidden font-bold text-white bg-orange-600 h-44 rounded-3xl">
+    <div className="relative flex flex-col items-start justify-center w-full h-32 gap-5 px-6 overflow-hidden text-base font-bold text-white bg-orange rounded-3xl">
       <img
-        src={bg_chart}
-        alt="bg chart"
-        className="absolute bottom-0 right-0 w-40 pointer-events-none opacity-30"
+        src={image}
+        alt="bg"
+        className="absolute bottom-0 right-0 w-24 pointer-events-none opacity-30"
       />
 
-      <div className="text-2xl font-extrabold">Yanolja Attractiveness Index</div>
-      <div className="text-lg"> Go to &gt; </div>
+      <div className="text-lg font-extrabold">{title}</div>
+      <div className="text-sm text-gray-200">Go To &gt;</div>
     </div>
   );
 };

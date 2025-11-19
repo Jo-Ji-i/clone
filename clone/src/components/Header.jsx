@@ -17,13 +17,13 @@ export default function Header() {
   };
 
   return (
-    <header className="relative flex items-center justify-between w-screen h-32 border-b border-gray-300 px-14 group">
+    <header className="relative flex items-center justify-between w-screen h-24 px-10 border-b border-gray-300 group">
       {/* 로고 */}
       <Link to="#">
-        <img src={logo} alt="home" className="w-56" />
+        <img src={logo} alt="home" className="w-68" />
       </Link>
 
-      <nav className="flex justify-between text-lg font-semibold w-[1000px] mr-56">
+      <nav className="flex justify-between text-base font-medium w-[600px] mr-48 gap-x-4 ">
         <Link to="/research" className="w-1/4 text-center">
           Research
         </Link>
@@ -42,13 +42,13 @@ export default function Header() {
       <div className="relative">
         <button
           onClick={toggleLang}
-          className="flex items-center text-lg font-semibold cursor-pointer select-none"
+          className="flex items-center text-lg font-medium cursor-pointer select-none"
         >
           {lang}
           <img
             src={arrowDown}
             alt="arrow"
-            className={`ml-2 w-4 h-4 transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`}
+            className={`ml-6 w-4 h-4 transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`}
           />
         </button>
 
