@@ -57,7 +57,7 @@ import bg_glass from '../assets/etc/bg_glass.svg';
 import datalab from '../assets/etc/datalab.svg';
 
 export const NavCover = [
-  { title: 'Yanolja Attractiveness Index', image: bg_chart },
-  { title: 'Yanolja Brand Equity Index', image: bg_glass },
-  { title: 'Data Lab', image: datalab },
+  { title: 'Yanolja Attractiveness Index', bgcolor: '#f54b1f', image: bg_chart },
+  { title: 'Yanolja Brand Equity Index', bgcolor: '#de3509', image: bg_glass },
+  { title: 'Data Lab', bgcolor: '#f54b1f', image: datalab },
 ];

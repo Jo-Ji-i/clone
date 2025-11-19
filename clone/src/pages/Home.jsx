@@ -19,46 +19,37 @@ import { CircleBtn } from '../components/design/Button';
 
 import InsightCarousel from '../components/feat/InsightCarousel.jsx';
 import StackedCards from '../components/animation/StackedCards';
+import BriefCarousel from '../components/feat/BriefCarousel';
 
 export default function Home() {
   return (
     <div className="flex flex-col w-screen h-full">
       {/* 섹션 1  */}
-      <div className="flex w-full h-[650px] px-20 py-16 gap-12">
+      <div className="flex w-full h-[480px] px-20 py-12 gap-12">
         <div className="flex flex-col flex-[4] ">
           <InsightCarousel />
         </div>
 
         <div className="flex flex-col flex-[1] gap-6">
           {NavCover.map((item, idx) => (
-            <NavCard key={idx} title={item.title} image={item.image} />
+            <NavCard key={idx} title={item.title} image={item.image} color={item.bgcolor} />
           ))}
         </div>
       </div>
 
       {/* 섹션 2 */}
-      <div className="flex w-full h-[600px] px-20 py-10 gap-16">
-        <div className="flex flex-[4] flex-col gap-10 h-full relative">
-          <div className="flex text-3xl font-bold"> Insights / Brief </div>
-          <div className="flex flex-row items-center h-full">
-            <BriefCard />
-            <BriefCard />
-            <BriefCard />
-          </div>
-          <BarNav />
-          <CircleBtn
-            direction="right"
-            className="absolute right-[-20px] top-1/2 -translate-y-1/2"
-          />
+      <div className="flex w-full h-[570px] px-20 pt-10 gap-16 bg-pink-50">
+        <div className="flex flex-[4] flex-col h-full relative min-w-0">
+          <BriefCarousel />
         </div>
 
-        <div className="flex flex-col flex-[1]">
-          <div className="relative flex flex-row items-center h-full">
+        <div className="flex flex-col flex-[1] h-full gap-8">
+          <div className="relative flex flex-row items-center h-full bg-blue-50">
             <CircleBtn
               direction="left"
               className="absolute left-[-30px] top-1/2 -translate-y-1/2"
             />
-            <div className="flex flex-col h-full gap-6 ">
+            <div className="flex flex-col h-full gap-6 pb-16 ">
               <div className="flex text-3xl font-bold"> Quarterly Trends</div>
               <TrendCard />
               <CircleNav simple count={5} />

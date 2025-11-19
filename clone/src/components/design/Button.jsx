@@ -6,7 +6,7 @@ import left from '../../assets/etc/icon_arrow_left.svg';
 export function CircleBtn({ direction, className = '' }) {
   return (
     <div
-      className={`flex items-center justify-center w-16 h-16 shrink-0
+      className={`flex items-center justify-center w-14 h-14 shrink-0
                   bg-white border border-gray-300 rounded-full shadow-xl
                   ${className}`}
     >

@@ -1,8 +1,12 @@
 import React from 'react';
 
-const NavCard = ({ title, image }) => {
+const NavCard = ({ title, image, color }) => {
+  console.log(color);
   return (
-    <div className="relative flex flex-col items-start justify-center w-full h-32 gap-5 px-6 overflow-hidden text-base font-bold text-white bg-orange rounded-3xl">
+    <div
+      style={{ backgroundColor: color }}
+      className="relative flex flex-col items-start justify-center w-full h-32 gap-5 px-6 overflow-hidden text-base font-bold text-white rounded-3xl "
+    >
       <img
         src={image}
         alt="bg"

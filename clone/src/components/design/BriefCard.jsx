@@ -1,14 +1,13 @@
 import React from 'react';
-import coverImage1 from '../../assets/top_bg/img2.jpg';
 
-const BriefCard = () => {
+const BriefCard = ({ title, date, image }) => {
   return (
-    <div className="flex flex-col w-full h-auto gap-6">
-      <img src={coverImage1} className="rounded-xl w-80"></img>
-      <div className="flex flex-col w-56 gap-2 text-lg font-bold">
-        <div className="text-orange-600"> Insights </div>
-        <div className="text-xl">Korea Medical Tourism: Current Status and a Strategy </div>
-        <div className="text-gray-500"> 2025.11.12</div>
+    <div className="flex flex-col w-full h-auto gap-4">
+      <img src={image} className="px-2 w-72 rounded-xl" alt={title} />
+      <div className="flex flex-col w-56 gap-2 ml-2 text-lg font-medium">
+        <div className="text-sm font-bold text-orange">Insights</div>
+        <div className="text-xl font-semibold line-clamp-2">{title}</div>
+        <div className="text-sm text-gray-500">{date}</div>
       </div>
     </div>
   );
