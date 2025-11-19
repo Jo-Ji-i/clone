@@ -3,6 +3,7 @@ import { TrendList } from '../../data/list.js';
 import TrendCard from '../design/TrendCard.jsx';
 import { CircleBtn } from '../design/Button.jsx';
 import CircleNav from '../design/CircleNav.jsx';
+import arrow from '../../assets/etc/icon_arrow_right.svg';
 
 export default function TrendCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -35,7 +36,10 @@ export default function TrendCarousel() {
 
         {/* CONTENT */}
         <div className="flex flex-col h-full gap-6 pb-16">
-          <div className="flex text-3xl font-bold">Quarterly Trends</div>
+          <div className="flex gap-3 text-2xl font-bold">
+            Quarterly Trends
+            <img src={arrow} className="w-5 h-5 mt-1.5" />
+          </div>
 
           <TrendCard title={TrendList[activeIndex].title} date={TrendList[activeIndex].date} />
 

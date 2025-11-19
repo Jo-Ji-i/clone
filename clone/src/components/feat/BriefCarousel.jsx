@@ -3,6 +3,7 @@ import { InsightCover } from '../../data/cover.js';
 import BriefCard from '../design/BriefCard.jsx';
 import { CircleBtn } from '../design/Button.jsx';
 import BarNav from '../design/BarNav.jsx';
+import arrow from '../../assets/etc/icon_arrow_right.svg';
 
 export default function BriefCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -42,8 +43,9 @@ export default function BriefCarousel() {
   return (
     <div className="relative flex flex-col w-full h-full gap-10">
       {/* 타이틀 */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center gap-3">
         <div className="text-3xl font-bold">Insights / Brief</div>
+        <img src={arrow} className="w-5 h-5" />
       </div>
 
       {/* 버튼 */}

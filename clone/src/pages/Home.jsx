@@ -39,13 +39,13 @@ export default function Home() {
       </div>
 
       {/* 섹션 2 */}
-      <div className="flex w-full h-[550px] px-20 pt-10 gap-16 bg-pink-50">
+      <div className="flex w-full h-[550px] px-20 pt-10 gap-16 ">
         <div className="flex flex-[4] flex-col h-full min-w-0">
           <BriefCarousel />
         </div>
 
         <div className="flex flex-col flex-[1] h-full gap-8">
-          <div className="relative flex flex-row items-center h-full bg-blue-50">
+          <div className="relative flex flex-row items-center h-full ">
             <TrendCarousel />
           </div>
         </div>
