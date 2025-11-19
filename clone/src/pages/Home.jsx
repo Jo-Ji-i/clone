@@ -20,6 +20,7 @@ import { CircleBtn } from '../components/design/Button';
 import InsightCarousel from '../components/feat/InsightCarousel.jsx';
 import StackedCards from '../components/animation/StackedCards';
 import BriefCarousel from '../components/feat/BriefCarousel';
+import TrendCarousel from '../components/feat/TrendCarousel';
 
 export default function Home() {
   return (
@@ -38,26 +39,14 @@ export default function Home() {
       </div>
 
       {/* 섹션 2 */}
-      <div className="flex w-full h-[570px] px-20 pt-10 gap-16 bg-pink-50">
-        <div className="flex flex-[4] flex-col h-full relative min-w-0">
+      <div className="flex w-full h-[550px] px-20 pt-10 gap-16 bg-pink-50">
+        <div className="flex flex-[4] flex-col h-full min-w-0">
           <BriefCarousel />
         </div>
 
         <div className="flex flex-col flex-[1] h-full gap-8">
           <div className="relative flex flex-row items-center h-full bg-blue-50">
-            <CircleBtn
-              direction="left"
-              className="absolute left-[-30px] top-1/2 -translate-y-1/2"
-            />
-            <div className="flex flex-col h-full gap-6 pb-16 ">
-              <div className="flex text-3xl font-bold"> Quarterly Trends</div>
-              <TrendCard />
-              <CircleNav simple count={5} />
-            </div>
-            <CircleBtn
-              direction="right"
-              className="absolute right-[-30px] top-1/2 -translate-y-1/2"
-            />
+            <TrendCarousel />
           </div>
         </div>
       </div>

@@ -7,19 +7,41 @@ import BarNav from '../design/BarNav.jsx';
 export default function BriefCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const maxIndex = InsightCover.length - 4; // 한 화면에 4개 보이므로
+  const total = InsightCover.length;
+  const cardWidth = 28; // 한 장 폭 (%)
+  const visibleCount = 3.2; // 실제 보이는 개수 느낌
 
+  const goToLink = () => {
+    const lastItem = InsightCover[InsightCover.length - 1];
+    if (lastItem?.link) {
+      window.location.href = lastItem.link;
+    } else {
+      console.warn('link가 없습니다.');
+    }
+  };
+
+  // 이전
   const prev = () => {
-    setActiveIndex(prev => Math.max(prev - 1, 0));
+    if (activeIndex === 0) return; // 더 이상 못 가면 멈춤
+    setActiveIndex(prev => prev - 1);
   };
 
+  // 다음
   const next = () => {
-    setActiveIndex(prev => Math.min(prev + 1, maxIndex));
+    // 마지막 카드 근처에서 더 넘길 수 없음 → 링크 이동
+    if (activeIndex >= total - visibleCount) {
+      goToLink();
+      return;
+    }
+    setActiveIndex(prev => prev + 1);
   };
+
+  /** progress: 0 ~ 1 */
+  const progress = activeIndex / (total - visibleCount);
 
   return (
-    <div className="relative flex flex-col w-full h-full gap-10 ">
-      {/* 타이틀 영역 */}
+    <div className="relative flex flex-col w-full h-full gap-10">
+      {/* 타이틀 */}
       <div className="flex items-center justify-between">
         <div className="text-3xl font-bold">Insights / Brief</div>
       </div>
@@ -28,13 +50,12 @@ export default function BriefCarousel() {
       <CircleBtn
         direction="left"
         onClick={prev}
-        className="absolute left-[-30px] z-30 top-1/2 -translate-y-1/2"
+        className="absolute left-[-30px] z-50 top-1/2 -translate-y-1/2"
       />
-
       <CircleBtn
         direction="right"
         onClick={next}
-        className="absolute right-[-30px] top-1/2 z-30 -translate-y-1/2"
+        className="absolute right-[-30px] z-50 top-1/2 -translate-y-1/2"
       />
 
       {/* 슬라이더 영역 */}
@@ -42,19 +63,20 @@ export default function BriefCarousel() {
         <div
           className="flex transition-transform duration-500"
           style={{
-            width: `${InsightCover.length * 27}%`,
-            transform: `translateX(-${activeIndex * 20}%)`,
+            width: `${total * cardWidth}%`,
+            transform: `translateX(-${activeIndex * cardWidth}%)`,
           }}
         >
           {InsightCover.map((item, idx) => (
-            <div key={idx} className="flex-shrink-0" style={{ width: '30%' }}>
+            <div key={idx} className="flex-shrink-0" style={{ width: `${cardWidth}%` }}>
               <BriefCard title={item.title} date={item.date} image={item.image} />
             </div>
           ))}
         </div>
       </div>
 
-      <BarNav />
+      {/* 바 네비 */}
+      <BarNav progress={progress} />
     </div>
   );
 }
