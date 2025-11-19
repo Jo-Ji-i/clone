@@ -14,7 +14,7 @@ export default function BriefCarousel() {
   const goToLink = () => {
     const lastItem = InsightCover[InsightCover.length - 1];
     if (lastItem?.link) {
-      window.location.href = lastItem.link;
+      window.location.href = '/insight';
     } else {
       console.warn('link가 없습니다.');
     }

@@ -9,9 +9,19 @@ export default function TrendCarousel() {
 
   const maxIndex = TrendList.length - 1;
 
-  const prev = () => setActiveIndex(prev => Math.max(prev - 1, 0));
+  const prev = () => {
+    setActiveIndex(prev => Math.max(prev - 1, 0));
+  };
 
-  const next = () => setActiveIndex(prev => Math.min(prev + 1, maxIndex));
+  const next = () => {
+    // 👉 마지막에서 한번 더 누르면 링크 이동
+    if (activeIndex === maxIndex) {
+      window.location.href = '/trends';
+      return;
+    }
+
+    setActiveIndex(prev => Math.min(prev + 1, maxIndex));
+  };
 
   return (
     <div className="flex flex-col flex-[1] h-full gap-8">
@@ -20,24 +30,23 @@ export default function TrendCarousel() {
         <CircleBtn
           direction="left"
           onClick={prev}
-          className="absolute left-[-30px] top-1/2 -translate-y-1/2"
+          className="absolute left-[-30px] top-1/2 -translate-y-1/2 cursor-pointer"
         />
 
         {/* CONTENT */}
         <div className="flex flex-col h-full gap-6 pb-16">
           <div className="flex text-3xl font-bold">Quarterly Trends</div>
 
-          {/* 현재 인덱스의 데이터만 보여줌 */}
           <TrendCard title={TrendList[activeIndex].title} date={TrendList[activeIndex].date} />
 
-          <CircleNav simple count={TrendList.length} active={activeIndex} />
+          <CircleNav simple count={TrendList.length} activeIndex={activeIndex} />
         </div>
 
         {/* RIGHT BTN */}
         <CircleBtn
           direction="right"
           onClick={next}
-          className="absolute right-[-30px] top-1/2 -translate-y-1/2"
+          className="absolute right-[-30px] top-1/2 -translate-y-1/2 cursor-pointer"
         />
       </div>
     </div>
