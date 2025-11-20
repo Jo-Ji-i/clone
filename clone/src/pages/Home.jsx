@@ -59,7 +59,7 @@ export default function Home() {
       </div>
 
       {/* 섹션 4 */}
-      <div className="flex w-full h-[600px] px-20 pt-16 gap-16">
+      <div className="flex w-full h-[550px] px-20 py-16 gap-16 items-center">
         <div className="flex flex-[4] flex-col">
           <div className="flex flex-row justify-between px-6 py-3">
             <div className="flex gap-6 text-3xl font-bold">
