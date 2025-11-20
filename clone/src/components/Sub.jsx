@@ -13,9 +13,9 @@ import weibo from '../assets/sns/weibo.svg';
 
 export default function Sub() {
   return (
-    <div className="flex flex-row items-center justify-between w-screen px-40 bg-orange-100 h-72 bg-opacity-80">
+    <div className="flex flex-row items-center justify-between w-screen px-24 bg-beige h-72 bg-opacity-80">
       <div className="flex flex-col">
-        <div className="mb-5 text-4xl font-extrabold">
+        <div className="mb-5 text-3xl font-semibold">
           Stay updated with more news from Yanolja Research on SNS.
         </div>
         <div className="flex w-64 h-10 ">
@@ -32,7 +32,7 @@ export default function Sub() {
         </div>
       </div>
       <div>
-        <div className="flex items-center justify-center h-20 text-lg font-bold text-center text-white bg-orange-600 rounded-full w-60">
+        <div className="flex items-center justify-center h-16 text-lg font-bold text-center text-white rounded-full w-52 bg-orange">
           Subscribe Now
         </div>
       </div>

@@ -11,7 +11,7 @@ export default function CircleNav({
   onChange = () => {},
 }) {
   return (
-    <div className="flex items-center justify-center gap-6 text-xl text-gray-800">
+    <div className="flex items-center justify-center gap-6 text-lg text-gray-800">
       {/* simple 모드 아닐 때만 왼쪽 화살표 */}
       {!simple && (
         <img
@@ -23,11 +23,11 @@ export default function CircleNav({
       )}
 
       {/* 동그라미 네비게이션 */}
-      <div className="flex items-center gap-3 text-xl">
+      <div className="flex items-center gap-3 text-base">
         {Array.from({ length: count }).map((_, i) => (
           <span
             key={i}
-            className={`cursor-pointer ${i === activeIndex ? 'text-black' : 'text-gray-400'}`}
+            className={`cursor-pointer text-sm ${i === activeIndex ? 'text-black' : 'text-gray-400'}`}
             onClick={() => onChange(i)}
           >
             {i === activeIndex ? '●' : '○'}

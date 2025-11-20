@@ -25,3 +25,13 @@ export const listData = [
     date: '2025.11.14',
   },
 ];
+
+export const TrendList = [
+  { title: 'Korean Lodging Industry Trends Report for Q3 2025', date: '2025.10.29' },
+  { title: 'Korean Lodging Industry Trends Report for Q2 2025', date: '2025.07.28' },
+  { title: 'Korean Lodging Industry Trends Report for Q1 2025', date: '2025.04.28' },
+  { title: 'Korean Lodging Industry Trends Report for Q4 2024', date: '2025.01.24' },
+  { title: 'Korean Lodging Industry Trends Report for Q3 2024', date: '2024.10.31' },
+  { title: 'Korean Lodging Industry Trends Report for Q2 2024', date: '2024.08.09' },
+  { title: 'Korean Lodging Industry Trends Report for Q1 2024', date: '2024.04.29' },
+];
