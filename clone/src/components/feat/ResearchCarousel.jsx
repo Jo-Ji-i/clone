@@ -3,6 +3,7 @@ import ResearchCard from '../design/ResearchCard.jsx';
 import { CircleBtn } from '../design/Button.jsx';
 import BarNav from '../design/BarNav.jsx';
 import { ResearchCover } from '../../data/cover.js';
+import arrow from '../../assets/etc/arrow_right.svg';
 
 export default function ResearchCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -39,7 +40,7 @@ export default function ResearchCarousel() {
 
     const lastVisibleIndex = nextIndex + (visibleCount - 1);
 
-    // ⛔ 마지막을 넘어감 → 빈자리 → 링크 이동
+    // 마지막을 넘어감 → 빈자리 → 링크 이동
     if (lastVisibleIndex >= total) {
       window.location.href = '/research';
       return;
@@ -56,7 +57,10 @@ export default function ResearchCarousel() {
 
   return (
     <div className="relative flex flex-col justify-center w-full h-full px-20 py-5 bg-beige">
-      <div className="flex text-2xl font-bold">Research Report</div>
+      <div className="flex flex-row items-center gap-2">
+        <div className="flex text-3xl font-bold">Research Report</div>
+        <img src={arrow} className="w-5 h-5 mt-1" />
+      </div>
 
       <CircleBtn
         direction="left"
