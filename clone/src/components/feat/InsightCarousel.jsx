@@ -2,7 +2,7 @@ import { useState } from 'react';
 import InsightCard from '../design/InsightCard';
 import CircleNav from '../design/CircleNav';
 import { InsightCover } from '../../data/cover.js';
-import StackedCards from '../animation/StackedCards';
+import StackedCards from './StackedCards.jsx';
 
 export default function InsightCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
