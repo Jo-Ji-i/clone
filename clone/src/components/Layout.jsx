@@ -1,6 +1,7 @@
 import Header from './Header';
 import Footer from './Footer';
 import Sub from './Sub';
+import FadeInSection from './common/FadeInSection';
 
 export default function Layout({ children }) {
   return (
@@ -8,8 +9,9 @@ export default function Layout({ children }) {
       <Header />
 
       <main className="flex flex-1 w-full">{children}</main>
-
-      <Sub />
+      <FadeInSection>
+        <Sub />
+      </FadeInSection>
       <Footer />
     </div>
   );
