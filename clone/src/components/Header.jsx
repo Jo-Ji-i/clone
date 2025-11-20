@@ -73,7 +73,7 @@ export default function Header() {
 
       {/* 드롭다운 */}
       <div className="absolute left-0 z-40 w-screen transition-all duration-150 bg-white border-t border-gray-200 shadow-lg opacity-0 pointer-events-none top-full group-hover:opacity-100 group-hover:pointer-events-auto">
-        <div className="grid max-w-5xl grid-cols-4 gap-10 px-6 py-6 mx-auto text-lg font-semibold">
+        <div className="grid max-w-5xl grid-cols-4 px-6 py-6 mx-auto text-base font-semibold w-[730px]">
           {/* 1열 */}
           <div className="space-y-2 text-center">
             <Link
