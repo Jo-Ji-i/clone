@@ -2,6 +2,14 @@ import Img1 from '../assets/insight/img1.png';
 import Img2 from '../assets/insight/img2.jpg';
 import Img3 from '../assets/insight/img3.jpg';
 import Img4 from '../assets/insight/img4.png';
+import img1 from '../assets/report/img1.jpg';
+import img2 from '../assets/report/img2.png';
+import img3 from '../assets/report/img3.png';
+import img4 from '../assets/report/img4.png';
+import img5 from '../assets/report/img5.png';
+import bg_chart from '../assets/etc/bg_chart.svg';
+import bg_glass from '../assets/etc/bg_glass.svg';
+import datalab from '../assets/etc/datalab.svg';
 
 export const InsightCover = [
   {
@@ -30,31 +38,12 @@ export const InsightCover = [
 ];
 
 export const ResearchCover = [
-  {
-    image: '../assets/report/img1.jpg',
-    date: '2025.02.27',
-  },
-  {
-    image: '../assets/report/img2.png',
-    date: '2025.02.27',
-  },
-  {
-    image: '../assets/report/img3.png',
-    date: '2025.02.27',
-  },
-  {
-    image: '../assets/report/img4.png',
-    date: '2025.02.27',
-  },
-  {
-    image: '../assets/report/img5.png',
-    date: '2025.02.27',
-  },
+  { image: img1, date: '2025.02.27' },
+  { image: img2, date: '2025.02.27' },
+  { image: img3, date: '2025.02.27' },
+  { image: img4, date: '2025.02.27' },
+  { image: img5, date: '2025.02.27' },
 ];
-
-import bg_chart from '../assets/etc/bg_chart.svg';
-import bg_glass from '../assets/etc/bg_glass.svg';
-import datalab from '../assets/etc/datalab.svg';
 
 export const NavCover = [
   { title: 'Yanolja Attractiveness Index', bgcolor: '#f54b1f', image: bg_chart },

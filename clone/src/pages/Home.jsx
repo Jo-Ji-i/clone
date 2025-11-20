@@ -21,6 +21,7 @@ import InsightCarousel from '../components/feat/InsightCarousel.jsx';
 import StackedCards from '../components/animation/StackedCards';
 import BriefCarousel from '../components/feat/BriefCarousel';
 import TrendCarousel from '../components/feat/TrendCarousel';
+import ResearchCarousel from '../components/feat/ResearchCarousel';
 
 export default function Home() {
   return (
@@ -52,17 +53,8 @@ export default function Home() {
       </div>
 
       {/* 섹션 3 */}
-      <div className="flex w-full flex-col h-[800px] relative px-20 my-20 py-12 gap-5 bg-orange-100">
-        <div className="flex text-3xl font-bold"> Research Report </div>
-        <div className="flex flex-row gap-5 mb-5">
-          <ResearchCard />
-          <ResearchCard />
-          <ResearchCard />
-          <ResearchCard />
-        </div>
-        <BarNav />
-        <CircleBtn direction="left" className="absolute left-[40px] top-1/2 -translate-y-1/2" />
-        <CircleBtn direction="right" className="absolute right-[80px] top-1/2 -translate-y-1/2" />
+      <div className="flex w-full h-[650px]">
+        <ResearchCarousel />
       </div>
 
       {/* 섹션 4 */}

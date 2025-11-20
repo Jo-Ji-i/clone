@@ -1,7 +1,6 @@
 import React from 'react';
 
 const NavCard = ({ title, image, color }) => {
-  console.log(color);
   return (
     <div
       style={{ backgroundColor: color }}
