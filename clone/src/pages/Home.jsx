@@ -7,7 +7,6 @@ import TrendCard from '../components/design/TrendCard';
 import MediaList from '../components/design/MediaList';
 import CircleNav from '../components/design/CircleNav';
 import DataCard from '../components/design/DataCard';
-import InsightCarousel from '../components/feat/InsightCarousel.jsx';
 import StackedCards from '../components/feat/StackedCards.jsx';
 import BriefCarousel from '../components/feat/BriefCarousel';
 import TrendCarousel from '../components/feat/TrendCarousel';
@@ -24,6 +23,7 @@ import { CircleBtn } from '../components/design/Button';
 
 //
 import FadeInSection from '../components/common/FadeInSection';
+import InsightSection from '../components/common/InsightSection';
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
       {/* 섹션 1  */}
       <div className="flex w-full h-[480px] px-20 py-12 gap-12">
         <div className="flex flex-col flex-[4] ">
-          <InsightCarousel />
+          <InsightSection InsightCover={InsightCover} />
         </div>
 
         <div className="flex flex-col flex-[1] gap-6">

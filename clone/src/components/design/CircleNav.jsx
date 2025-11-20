@@ -8,7 +8,10 @@ export default function CircleNav({
   simple = false,
   count = 6,
   activeIndex = 0,
+  isPlaying = true,
   onChange = () => {},
+  onPlay = () => {},
+  onPause = () => {},
 }) {
   return (
     <div className="flex items-center justify-center gap-6 text-lg text-gray-800">
@@ -39,8 +42,8 @@ export default function CircleNav({
       {!simple && (
         <>
           <div className="flex items-center gap-4 text-base">
-            <img src={iconPlay} className="w-3 h-3 cursor-pointer" alt="play" />
-            <img src={iconPause} className="w-3 h-3 cursor-pointer" alt="pause" />
+            <img src={iconPlay} className="w-3 h-3 cursor-pointer" alt="play" onClick={onPlay} />
+            <img src={iconPause} className="w-3 h-3 cursor-pointer" alt="pause" onClick={onPause} />
           </div>
 
           <img
