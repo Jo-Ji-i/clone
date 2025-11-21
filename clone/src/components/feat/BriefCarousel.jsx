@@ -9,7 +9,7 @@ export default function BriefCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(1);
 
-  const CARD_WIDTH = 240; // 카드 실제 폭(px)
+  const CARD_WIDTH = 220; // 카드 실제 폭(px)
   const CARD_GAP = 40;
   const ITEM_WIDTH = CARD_WIDTH + CARD_GAP;
 
@@ -55,7 +55,7 @@ export default function BriefCarousel() {
   const progress = activeIndex / (total - 1);
 
   return (
-    <div className="relative flex flex-col w-full h-full gap-10">
+    <div className="relative flex flex-col w-full h-full gap-4 py-2">
       {/* 타이틀 */}
       <div className="flex items-center gap-3">
         <div className="text-3xl font-bold">Insights / Brief</div>
@@ -66,12 +66,12 @@ export default function BriefCarousel() {
       <CircleBtn
         direction="left"
         onClick={prev}
-        className="absolute left-[-30px] z-50 top-1/2 -translate-y-1/2"
+        className="absolute left-[-30px] top-1/2 md:top-[45%]  lg:top-[50%] z-50"
       />
       <CircleBtn
         direction="right"
         onClick={next}
-        className="absolute right-[-30px] z-50 top-1/2 -translate-y-1/2"
+        className="absolute right-[-30px] top-1/2 md:top-[45%] lg:right-[40px] lg:top-[50%] z-50"
       />
 
       {/* 슬라이더 영역 */}
