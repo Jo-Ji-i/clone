@@ -5,41 +5,32 @@ import arrowDown from '../assets/etc/lang_arrow_black.svg';
 
 export default function Header() {
   const [lang, setLang] = useState('EN');
-  const [langOpen, setLangOpen] = useState(false); // 드롭다운 열림 상태
+  const [langOpen, setLangOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // 모바일 메뉴
 
-  const toggleLang = () => {
-    setLangOpen(prev => !prev);
-  };
-
+  const toggleLang = () => setLangOpen(prev => !prev);
   const selectLang = selected => {
     setLang(selected);
     setLangOpen(false);
   };
 
   return (
-    <header className="relative flex items-center justify-between w-screen h-24 px-10 border-b border-gray-300 group">
+    <header className="relative flex items-center justify-between w-full h-20 px-4 border-b border-gray-300 md:px-10 lg:px-20">
       {/* 로고 */}
       <Link to="#">
-        <img src={logo} alt="home" className="w-68" />
+        <img src={logo} alt="home" className="w-40 md:w-48" />
       </Link>
 
-      <nav className="flex justify-between text-base font-medium w-[600px] mr-48 gap-x-4 ">
-        <Link to="/research" className="w-1/4 text-center">
-          Research
-        </Link>
-        <Link to="/datalab" className="w-1/4 text-center">
-          DataLab
-        </Link>
-        <Link to="/index" className="w-1/4 text-center">
-          Indexes
-        </Link>
-        <Link to="/about" className="w-1/4 text-center">
-          About
-        </Link>
+      {/* 데스크탑 네비게이션 */}
+      <nav className="justify-between hidden text-base font-medium md:flex gap-x-8 lg:gap-x-12">
+        <Link to="/research">Research</Link>
+        <Link to="/datalab">DataLab</Link>
+        <Link to="/index">Indexes</Link>
+        <Link to="/about">About</Link>
       </nav>
 
-      {/* 언어 선택 버튼 */}
-      <div className="relative">
+      {/* 언어 선택 */}
+      <div className="relative hidden md:block">
         <button
           onClick={toggleLang}
           className="flex items-center text-lg font-medium cursor-pointer select-none"
@@ -48,128 +39,124 @@ export default function Header() {
           <img
             src={arrowDown}
             alt="arrow"
-            className={`ml-6 w-4 h-4 transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`}
+            className={`ml-3 w-4 h-4 transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`}
           />
         </button>
 
-        {/* 언어 드롭다운 */}
         {langOpen && (
           <div className="absolute right-0 z-50 w-24 mt-2 bg-white border border-gray-200 rounded-md shadow-lg">
-            <button
-              onClick={() => selectLang('EN')}
-              className="w-full px-4 py-2 text-left hover:bg-gray-100"
-            >
+            <button onClick={() => selectLang('EN')} className="w-full px-4 py-2 hover:bg-gray-100">
               EN
             </button>
-            <button
-              onClick={() => selectLang('KO')}
-              className="w-full px-4 py-2 text-left hover:bg-gray-100"
-            >
+            <button onClick={() => selectLang('KO')} className="w-full px-4 py-2 hover:bg-gray-100">
               KO
             </button>
           </div>
         )}
       </div>
 
-      {/* 드롭다운 */}
-      <div className="absolute left-0 z-40 w-screen transition-all duration-150 bg-white border-t border-gray-200 shadow-lg opacity-0 pointer-events-none top-full group-hover:opacity-100 group-hover:pointer-events-auto">
-        <div className="grid max-w-5xl grid-cols-4 px-6 py-6 mx-auto text-base font-semibold w-[730px]">
-          {/* 1열 */}
+      {/* 모바일 햄버거 버튼 */}
+      <button className="text-3xl font-bold md:hidden" onClick={() => setMenuOpen(true)}>
+        ☰
+      </button>
+
+      {/* 모바일 전체 메뉴 */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-50 p-6 bg-white">
+          <button className="absolute text-3xl top-4 right-4" onClick={() => setMenuOpen(false)}>
+            ✕
+          </button>
+
+          <div className="flex flex-col mt-16 space-y-6 text-xl font-semibold">
+            <Link to="/research" onClick={() => setMenuOpen(false)}>
+              Research
+            </Link>
+            <Link to="/datalab" onClick={() => setMenuOpen(false)}>
+              DataLab
+            </Link>
+            <Link to="/index" onClick={() => setMenuOpen(false)}>
+              Indexes
+            </Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>
+              About
+            </Link>
+          </div>
+
+          {/* 언어 선택 */}
+          <div className="mt-10">
+            <p className="mb-2 text-gray-500">Language</p>
+            <div className="flex gap-4">
+              <button
+                className={`px-4 py-2 border rounded-md ${lang === 'EN' ? 'bg-gray-200' : ''}`}
+                onClick={() => selectLang('EN')}
+              >
+                EN
+              </button>
+              <button
+                className={`px-4 py-2 border rounded-md ${lang === 'KO' ? 'bg-gray-200' : ''}`}
+                onClick={() => selectLang('KO')}
+              >
+                KO
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 데스크탑 hover 드롭다운 */}
+      <div className="absolute left-0 z-40 hidden w-full transition-all duration-150 bg-white border-t border-gray-200 shadow-lg opacity-0 pointer-events-none top-full group-hover:opacity-100 group-hover:pointer-events-auto md:block">
+        <div className="grid max-w-5xl grid-cols-4 gap-8 px-6 py-6 mx-auto">
+          {/* 4개의 열 */}
           <div className="space-y-2 text-center">
-            <Link
-              to="/insights/brief"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/insights/brief" className="block px-3 py-2 hover:font-bold">
               Brief
             </Link>
-            <Link
-              to="/insights/quarterly"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/insights/quarterly" className="block px-3 py-2 hover:font-bold">
               Quarterly Trends
             </Link>
-            <Link
-              to="/insights/report"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/insights/report" className="block px-3 py-2 hover:font-bold">
               Research Report
             </Link>
-            <Link
-              to="/insights/subscription"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/insights/subscription" className="block px-3 py-2 hover:font-bold">
               Subscription
             </Link>
           </div>
 
-          {/* 2열 */}
           <div className="space-y-2 text-center">
-            <Link
-              to="/indexes/lodging"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/indexes/lodging" className="block px-3 py-2 hover:font-bold">
               Lodging Industry Performance
             </Link>
-            <Link
-              to="/indexes/tourism"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/indexes/tourism" className="block px-3 py-2 hover:font-bold">
               Tourism Indicators
             </Link>
-            <Link
-              to="/indexes/data-download"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/indexes/data-download" className="block px-3 py-2 hover:font-bold">
               Data Download
             </Link>
           </div>
 
-          {/* 3열 */}
           <div className="space-y-2 text-center">
-            <Link
-              to="/indexes/attractiveness"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
-              Yanolja AttractivenesIndex
+            <Link to="/indexes/attractiveness" className="block px-3 py-2 hover:font-bold">
+              Attractiveness Index
             </Link>
-            <Link
-              to="/indexes/brand-equity"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
-              Yanolja Brand Equity Index
+            <Link to="/indexes/brand-equity" className="block px-3 py-2 hover:font-bold">
+              Brand Equity Index
             </Link>
           </div>
 
-          {/* 4열 */}
           <div className="space-y-2 text-center">
-            <Link
-              to="/about/message"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/about/message" className="block px-3 py-2 hover:font-bold">
               About Us
             </Link>
-            <Link
-              to="/about/message"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/about/message" className="block px-3 py-2 hover:font-bold">
               Message
             </Link>
-            <Link
-              to="/about/summary"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/about/summary" className="block px-3 py-2 hover:font-bold">
               Summary
             </Link>
-            <Link
-              to="/about/yr-media"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/about/yr-media" className="block px-3 py-2 hover:font-bold">
               YR In Media
             </Link>
-            <Link
-              to="/about/notice"
-              className="block px-3 py-2 transition-all hover:font-bold hover:text-gray-900"
-            >
+            <Link to="/about/notice" className="block px-3 py-2 hover:font-bold">
               Notice
             </Link>
           </div>
