@@ -13,7 +13,7 @@ export default function TrendCarousel() {
   const prev = () => setActiveIndex(prev => Math.max(prev - 1, 0));
   const next = () => {
     if (activeIndex === maxIndex) {
-      window.location.href = '/trends';
+      window.location.href = '/research';
       return;
     }
     setActiveIndex(prev => Math.min(prev + 1, maxIndex));

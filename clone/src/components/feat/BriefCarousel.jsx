@@ -39,7 +39,7 @@ export default function BriefCarousel() {
 
     // 빈자리 생김 → 링크 이동
     if (lastVisibleIndex >= total) {
-      window.location.href = '/trend';
+      window.location.href = '/research';
       return;
     }
 
