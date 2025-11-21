@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import InsightCarousel from '../feat/InsightCarousel';
-import CircleNav from '../design/CircleNav';
-import NavCard from '../design/NavCard';
+import InsightCarousel from '../feat/InsightCarousel.jsx';
+import CircleNav from '../design/CircleNav.jsx';
+import NavCard from '../design/NavCard.jsx';
 import { NavCover } from '../../data/cover.js';
 
 export default function InsightSection({ InsightCover }) {

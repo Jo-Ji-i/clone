@@ -1,8 +1,8 @@
-import MediaList from '../design/MediaList';
-import DataCard from '../design/DataCard';
+import MediaList from '../design/MediaList.jsx';
+import DataCard from '../design/DataCard.jsx';
 import arrow from '../../assets/etc/arrow_right.svg';
 import { listData } from '../../data/list.js';
-import SectionWrapper from './SectionWrapper';
+import SectionWrapper from './SectionWrapper.jsx';
 
 export default function MediaSection() {
   return (
