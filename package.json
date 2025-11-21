@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "framer-motion": "^12.23.24"
+  }
+}
