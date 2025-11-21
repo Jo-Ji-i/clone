@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ljharb/tsconfig": "^0.3.2",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "framer-motion": "^12.23.24",
     "react": "^19.2.0",

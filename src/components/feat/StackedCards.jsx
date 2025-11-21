@@ -21,7 +21,7 @@ export default function StackedCards({ cards, activeIndex }) {
           const cardWidth = 100 - (visibleCount - 1) * 4; // 92%
 
           return (
-            <divs
+            <div
               key={card.originalIndex}
               className="absolute top-0 left-0 w-full transition-all duration-300"
               style={{
@@ -31,7 +31,7 @@ export default function StackedCards({ cards, activeIndex }) {
               }}
             >
               <InsightCard image={card.image} title={card.title} />
-            </divs>
+            </div>
           );
         })}
       </div>
