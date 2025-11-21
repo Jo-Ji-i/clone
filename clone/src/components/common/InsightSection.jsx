@@ -24,7 +24,7 @@ export default function InsightSection({ InsightCover }) {
       {/* 최대 너비 컨테이너 */}
       <div className="flex flex-col w-full gap-12 lg:flex-row">
         {/* Carousel + CircleNav */}
-        <div className="flex flex-col w-full lg:flex-[4] gap-6">
+        <div className="flex flex-col w-full justify-center lg:flex-[4] gap-6">
           <InsightCarousel
             InsightCover={InsightCover}
             activeIndex={activeIndex}
