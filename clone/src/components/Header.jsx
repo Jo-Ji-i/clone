@@ -15,14 +15,14 @@ export default function Header() {
   };
 
   return (
-    <header className="relative flex items-center justify-between w-full h-20 px-4 border-b border-gray-300 md:px-10 lg:px-20">
+    <header className="relative flex flex-col items-start justify-between w-full h-16 gap-4 px-4 border-b border-gray-300 md:flex-row md:items-center md:px-10 lg:px-20 group md:gap-0">
       {/* 로고 */}
       <Link to="#">
         <img src={logo} alt="home" className="w-40 md:w-48" />
       </Link>
 
       {/* 데스크탑 네비게이션 */}
-      <nav className="justify-between hidden text-base font-medium md:flex gap-x-8 lg:gap-x-12">
+      <nav className="hidden text-base font-medium md:flex gap-x-8 lg:gap-x-28">
         <Link to="/research">Research</Link>
         <Link to="/datalab">DataLab</Link>
         <Link to="/index">Indexes</Link>
@@ -39,7 +39,7 @@ export default function Header() {
           <img
             src={arrowDown}
             alt="arrow"
-            className={`ml-3 w-4 h-4 transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`}
+            className={`ml-2 w-4 h-4 transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`}
           />
         </button>
 
@@ -62,7 +62,7 @@ export default function Header() {
 
       {/* 모바일 전체 메뉴 */}
       {menuOpen && (
-        <div className="fixed inset-0 z-50 p-6 bg-white">
+        <div className="fixed inset-0 z-50 flex flex-col p-6 bg-white md:hidden">
           <button className="absolute text-3xl top-4 right-4" onClick={() => setMenuOpen(false)}>
             ✕
           </button>
@@ -104,9 +104,9 @@ export default function Header() {
       )}
 
       {/* 데스크탑 hover 드롭다운 */}
-      <div className="absolute left-0 z-40 hidden w-full transition-all duration-150 bg-white border-t border-gray-200 shadow-lg opacity-0 pointer-events-none top-full group-hover:opacity-100 group-hover:pointer-events-auto md:block">
-        <div className="grid max-w-5xl grid-cols-4 gap-8 px-6 py-6 mx-auto">
-          {/* 4개의 열 */}
+      <div className="absolute left-0 z-40 justify-center hidden w-full transition-all duration-150 bg-white border-t border-gray-200 shadow-lg opacity-0 pointer-events-none top-full group-hover:opacity-100 group-hover:pointer-events-auto md:flex">
+        <div className="grid w-full max-w-[1200px] grid-cols-4 gap-6 px-6 py-6">
+          {/* 1열 */}
           <div className="space-y-2 text-center">
             <Link to="/insights/brief" className="block px-3 py-2 hover:font-bold">
               Brief
@@ -122,6 +122,7 @@ export default function Header() {
             </Link>
           </div>
 
+          {/* 2열 */}
           <div className="space-y-2 text-center">
             <Link to="/indexes/lodging" className="block px-3 py-2 hover:font-bold">
               Lodging Industry Performance
@@ -134,6 +135,7 @@ export default function Header() {
             </Link>
           </div>
 
+          {/* 3열 */}
           <div className="space-y-2 text-center">
             <Link to="/indexes/attractiveness" className="block px-3 py-2 hover:font-bold">
               Attractiveness Index
@@ -143,6 +145,7 @@ export default function Header() {
             </Link>
           </div>
 
+          {/* 4열 */}
           <div className="space-y-2 text-center">
             <Link to="/about/message" className="block px-3 py-2 hover:font-bold">
               About Us

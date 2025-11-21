@@ -1,5 +1,3 @@
-// 공통 섹션 포맷
-
 import FadeInSection from './FadeInSection';
 
 export default function SectionWrapper({
@@ -10,14 +8,25 @@ export default function SectionWrapper({
   gap = 16,
   fade = false,
 }) {
-  const section = (
-    <div
-      className={`flex w-full px-${paddingX} py-${paddingY} gap-${gap}`}
-      style={{ height: `${height}px` }}
-    >
+  // 모바일: height auto, 데스크탑: 고정
+  const sectionStyle = {
+    height: 'auto',
+    gap: `${gap}px`,
+    paddingLeft: `${paddingX}px`,
+    paddingRight: `${paddingX}px`,
+    paddingTop: `${paddingY}px`,
+    paddingBottom: `${paddingY}px`,
+  };
+
+  return fade ? (
+    <FadeInSection>
+      <div className="flex flex-col w-full lg:flex-row" style={{ ...sectionStyle, height: height }}>
+        {children}
+      </div>
+    </FadeInSection>
+  ) : (
+    <div className="flex flex-col w-full lg:flex-row" style={{ ...sectionStyle, height: height }}>
       {children}
     </div>
   );
-
-  return fade ? <FadeInSection>{section}</FadeInSection> : section;
 }

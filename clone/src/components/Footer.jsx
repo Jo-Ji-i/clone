@@ -14,16 +14,16 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-screen px-24 py-16 text-gray-300 bg-stone-900">
+    <footer className="w-screen px-6 py-12 text-gray-300 lg:px-24 lg:py-16 bg-stone-900">
       {/* 상단 로고 + Family Site */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col items-start justify-between gap-6 mb-8 lg:flex-row">
         {/* 로고 / 브랜드 */}
         <div className="flex-shrink-0">
-          <img src={logo} alt="Logo" className="w-48" />
+          <img src={logo} alt="Logo" className="w-36 lg:w-48" />
         </div>
 
-        {/* Family Site 버튼 */}
-        <div className="relative w-64">
+        {/* Family Site 버튼 (모바일에서 맨 아래로) */}
+        <div className="relative order-last w-full lg:w-64 lg:order-none">
           <button
             onClick={toggleDropdown}
             className="flex items-center justify-between w-full px-6 py-2 text-gray-300 transition border border-gray-500 rounded-full bg-stone-800 hover:bg-stone-700"
