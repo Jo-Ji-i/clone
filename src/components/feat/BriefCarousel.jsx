@@ -55,7 +55,7 @@ export default function BriefCarousel() {
   };
 
   return (
-    <div className="relative flex flex-col w-full gap-4 py-2">
+    <div className="relative flex flex-col w-full gap-8 py-2 md:pr-10">
       {/* 타이틀 */}
       <div className="flex items-center gap-3">
         <div className="text-2xl font-bold lg:text-3xl">Insights / Brief</div>
@@ -65,10 +65,10 @@ export default function BriefCarousel() {
       {/* 카드 슬라이더 영역 */}
       <div className="relative w-full">
         {/* 버튼: LG 이상만 */}
-        <div className="absolute inset-y-0 left-0 z-50 flex items-center hidden lg:flex">
+        <div className="absolute inset-y-0 z-50 items-center hidden -left-1 lg:flex">
           <CircleBtn direction="left" onClick={prev} />
         </div>
-        <div className="absolute inset-y-0 right-0 z-50 flex items-center hidden lg:flex">
+        <div className="absolute inset-y-0 z-50 items-center hidden -right-5 lg:flex">
           <CircleBtn direction="right" onClick={next} />
         </div>
 
