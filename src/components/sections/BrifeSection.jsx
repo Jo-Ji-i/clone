@@ -13,7 +13,7 @@ export default function BriefSection() {
         </div>
 
         {/* TrendCarousel 영역 */}
-        <div className="flex flex-[2] xl:flex-[1] flex-col h-full gap-6 xl:items-start justify-center">
+        <div className="flex flex-[2] xl:flex-[1] flex-col h-full w-full gap-6 xl:items-center justify-center">
           <TrendCarousel />
         </div>
       </div>
