@@ -4,9 +4,9 @@ import BriefSection from '../components/sections/BrifeSection.jsx';
 import ResearchSection from '../components/sections/ResearchSection.jsx';
 import MediaSection from '../components/sections/MediaSection.jsx';
 
-// 모바일 퍼스트
+// defalut - 모바일 퍼스트 방식
 // md: 태블릿, 랩탑(1024px) 크기
-// lg: 랩탑L, 크기
+// lg: 랩탑L
 
 export default function Home() {
   return (

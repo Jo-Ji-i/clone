@@ -4,7 +4,7 @@ const NavCard = ({ title, image, color }) => {
   return (
     <div
       style={{ backgroundColor: color }}
-      className="relative flex flex-col w-full h-20 gap-2 px-4 py-3 overflow-hidden font-bold text-white md:h-24 lg:h-26 rounded-3xl "
+      className="relative flex flex-col w-full h-20 gap-2 px-4 py-3 overflow-hidden font-bold text-white md:h-24 lg:h-26 rounded-2xl "
     >
       <img
         src={image}
