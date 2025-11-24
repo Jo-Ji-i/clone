@@ -75,10 +75,15 @@ export default function BriefCarousel() {
         {/* 카드 컨테이너 */}
         <div
           ref={containerRef}
-          className="flex gap-10 px-2 overflow-x-auto scroll-smooth hide-scrollbar"
+          className="flex gap-4 px-4 overflow-x-auto scroll-smooth hide-scrollbar"
+          style={{ scrollSnapType: 'x mandatory' }}
         >
           {InsightCover.map((item, idx) => (
-            <div key={idx} className="flex-shrink-0 w-[220px]">
+            <div
+              key={idx}
+              className="flex-shrink-0"
+              style={{ width: '220px', scrollSnapAlign: 'start' }}
+            >
               <BriefCard title={item.title} date={item.date} image={item.image} />
             </div>
           ))}
