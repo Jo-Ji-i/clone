@@ -1,8 +1,12 @@
 import { InsightCover } from '../data/cover.js';
-import InsightSection from '../components/common/InsightSection.jsx';
-import BriefSection from '../components/common/BrifeSection.jsx';
-import ResearchSection from '../components/common/ResearchSection.jsx';
-import MediaSection from '../components/common/MediaSection.jsx';
+import InsightSection from '../components/sections/InsightSection.jsx';
+import BriefSection from '../components/sections/BrifeSection.jsx';
+import ResearchSection from '../components/sections/ResearchSection.jsx';
+import MediaSection from '../components/sections/MediaSection.jsx';
+
+// defalut - 모바일 퍼스트 방식
+// md: 태블릿, 랩탑(1024px) 크기
+// lg: 랩탑L
 
 export default function Home() {
   return (

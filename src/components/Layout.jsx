@@ -1,7 +1,7 @@
-import Header from './Header';
+import Header from './header/Header';
 import Footer from './Footer';
 import Sub from './Sub';
-import FadeInSection from './common/FadeInSection';
+import FadeInSection from './sections/FadeInSection';
 
 export default function Layout({ children }) {
   return (
