@@ -8,7 +8,7 @@ export default function BriefSection() {
       {/* 모바일: flex-col, 태블릿 이상: flex-row */}
       <div className="flex flex-col items-start w-full h-full gap-10 lg:flex-row">
         {/* BriefCarousel 영역 */}
-        <div className="flex flex-[3] flex-col h-full min-w-0">
+        <div className="flex xl:flex-[3] flex-col h-full w-full ">
           <BriefCarousel />
         </div>
 
