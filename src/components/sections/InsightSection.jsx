@@ -20,11 +20,11 @@ export default function InsightSection({ InsightCover }) {
   }, [isPlaying, total]);
 
   return (
-    <div className="flex flex-col items-center w-full px-3 py-10 sm:px-6 md:px-12 lg:px-20">
+    <div className="flex flex-col items-center w-full px-4 py-10 md:px-6 lg:px-8">
       {/* 최대 너비 컨테이너 */}
-      <div className="flex flex-col w-full gap-10 lg:flex-row">
+      <div className="flex flex-col w-full gap-10 xl:flex-row">
         {/* Carousel + CircleNav */}
-        <div className="flex flex-col w-full justify-center lg:flex-[4] gap-6">
+        <div className="flex flex-col w-full justify-center xl:flex-[4] gap-6">
           <InsightCarousel
             InsightCover={InsightCover}
             activeIndex={activeIndex}
@@ -42,7 +42,7 @@ export default function InsightSection({ InsightCover }) {
         </div>
 
         {/* NavCards */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 lg:flex lg:flex-col lg:flex-[1] lg:gap-6">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 xl:flex xl:flex-col xl:flex-[1] xl:gap-6">
           {NavCover.map((item, idx) => (
             <NavCard key={idx} title={item.title} image={item.image} color={item.bgcolor} />
           ))}
