@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import InsightCarousel from '../feat/InsightCarousel.jsx';
+import InsightCarousel from '../feat/InsightCarousel';
 import CircleNav from '../design/CircleNav.jsx';
 import NavCard from '../design/NavCard.jsx';
 import { NavCover } from '../../data/cover.js';
@@ -20,9 +20,9 @@ export default function InsightSection({ InsightCover }) {
   }, [isPlaying, total]);
 
   return (
-    <div className="flex flex-col items-center w-full px-4 py-10 sm:px-6 md:px-12 lg:px-20">
+    <div className="flex flex-col items-center w-full px-3 py-10 sm:px-6 md:px-12 lg:px-20">
       {/* 최대 너비 컨테이너 */}
-      <div className="flex flex-col w-full gap-12 lg:flex-row">
+      <div className="flex flex-col w-full gap-10 lg:flex-row">
         {/* Carousel + CircleNav */}
         <div className="flex flex-col w-full justify-center lg:flex-[4] gap-6">
           <InsightCarousel

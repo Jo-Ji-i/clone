@@ -1,8 +1,8 @@
 import { InsightCover } from '../data/cover.js';
-import InsightSection from '../components/common/InsightSection.jsx';
-import BriefSection from '../components/common/BrifeSection.jsx';
-import ResearchSection from '../components/common/ResearchSection.jsx';
-import MediaSection from '../components/common/MediaSection.jsx';
+import InsightSection from '../components/sections/InsightSection.jsx';
+import BriefSection from '../components/sections/BrifeSection.jsx';
+import ResearchSection from '../components/sections/ResearchSection.jsx';
+import MediaSection from '../components/sections/MediaSection.jsx';
 
 export default function Home() {
   return (
